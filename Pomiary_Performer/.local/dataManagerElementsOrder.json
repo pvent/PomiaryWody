@@ -89,6 +89,13 @@
       "Path": "Process/CompareValues.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "arrDecVlues&Sequence_26",
+        "idx&Sequence_26",
+        "arrBoolFlags&Sequence_26",
+        "boolTempOver&Sequence_13",
+        "dateStamp&Sequence_13",
+        "idx&Sequence_21",
+        "decTemp&Sequence_13",
         "boolPrzewodnoscOver&Sequence_13",
         "strBodyHtml&Sequence_13",
         "decPH&Sequence_13",
@@ -142,6 +149,36 @@
         "sstrPass&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process/CreateHtmlData.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "boolTempOver",
+        "decTemp",
+        "boolPHOver",
+        "boolPrzewodnoscOver",
+        "boolTlenOver",
+        "strBodyHtml",
+        "in_strItemName",
+        "decPH",
+        "decPrzewodnosc",
+        "decTlen"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process/ConvertToDec.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_strValue",
+        "out_decValue"
+      ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
     }

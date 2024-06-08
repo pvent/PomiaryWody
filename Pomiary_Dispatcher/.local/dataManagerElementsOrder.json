@@ -47,17 +47,16 @@
       "Path": "Process/GetData.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "arrItemsToProcess&Sequence_1",
         "decTlen&Sequence_3",
         "decPH&Sequence_3",
         "decPrzewodnosc&Sequence_3",
-        "lstFilteredItems&Sequence_2",
         "strDateFormat&Sequence_3",
         "dtItem&Sequence_3",
         "strCsvLocation&Sequence_3",
         "strExtractedFile&Sequence_3",
         "strDownloadFile&Sequence_3",
-        "strUrl&Sequence_3",
-        "lstItems&Sequence_2"
+        "strUrl&Sequence_3"
       ],
       "ArgumentsSectionElementsOrder": [
         "in_Config"
