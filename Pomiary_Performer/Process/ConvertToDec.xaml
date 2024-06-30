@@ -3,7 +3,7 @@
     <x:Property Name="out_decValue" Type="OutArgument(x:Decimal)" />
     <x:Property Name="in_strValue" Type="InArgument(x:String)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>1729,1173</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1807,1173</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -112,13 +112,13 @@
       <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Convert to dec " sap:VirtualizedContainerService.HintSize="534,421" sap2010:WorkflowViewState.IdRef="Sequence_26">
+  <Sequence DisplayName="Convert to dec " sap:VirtualizedContainerService.HintSize="598,706" sap2010:WorkflowViewState.IdRef="Sequence_26">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="convert to dec - Try Catch" sap:VirtualizedContainerService.HintSize="472,333" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="convert to dec - Try Catch" sap:VirtualizedContainerService.HintSize="536,618" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
         <Assign DisplayName="dec value - Assign" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_24">
           <Assign.To>
@@ -130,10 +130,10 @@
         </Assign>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="438,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="502,433" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -153,7 +153,7 @@
                   <OutArgument x:TypeArguments="x:Decimal">[out_decValue]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
-                  <InArgument x:TypeArguments="x:Decimal">0.00</InArgument>
+                  <InArgument x:TypeArguments="x:Decimal">0</InArgument>
                 </Assign.Value>
               </Assign>
             </Sequence>

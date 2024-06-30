@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1874,1440</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1807,1613</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -128,7 +128,7 @@
       <AssemblyReference>System.Data.SqlClient</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="GetData" sap:VirtualizedContainerService.HintSize="616,1375" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="GetData" sap:VirtualizedContainerService.HintSize="616,1548" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="s:String[]" Name="arrItemsToProcess" />
     </Sequence.Variables>
@@ -145,13 +145,13 @@
         <InArgument x:TypeArguments="s:String[]">[in_Config("dispItems").ToString.Split(","c)]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="554,1173" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[arrItemsToProcess]">
+    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="554,1346" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[arrItemsToProcess]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:String">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:String" Name="cFile" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="520,986" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="520,1159" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="strUrl" />
               <Variable x:TypeArguments="x:String" Name="strDownloadFile" />
@@ -185,7 +185,7 @@
                 <InArgument x:TypeArguments="x:String">["https://pomiary.gios.gov.pl/assets/data/" &amp; cFile.ToLower &amp; ".zip"]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="458,500" sap2010:WorkflowViewState.IdRef="RetryScope_1">
+            <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="458,509" sap2010:WorkflowViewState.IdRef="RetryScope_1">
               <ui:RetryScope.ActivityBody>
                 <ActivityAction>
                   <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="416,302" sap2010:WorkflowViewState.IdRef="Sequence_4">
@@ -207,6 +207,7 @@
                 <ActivityFunc x:TypeArguments="x:Boolean" />
               </ui:RetryScope.Condition>
             </ui:RetryScope>
+            <ui:LogMessage DisplayName="queue item created Log Message" sap:VirtualizedContainerService.HintSize="458,164" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;performer queue item created: &quot; &amp; cFile]" />
           </Sequence>
         </ActivityAction>
       </ui:ForEach.Body>

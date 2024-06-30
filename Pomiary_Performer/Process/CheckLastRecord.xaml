@@ -1,0 +1,437 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="CheckLastRecord" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:p="clr-namespace:Pomiary_Performer;assembly=DataService.Pomiary_Performer" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:uda="clr-namespace:UiPath.DataService.Activities;assembly=UiPath.DataService.Activities.Core" xmlns:udam="clr-namespace:UiPath.DataService.Activities.Models;assembly=UiPath.DataService.Activities.Core" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_strLocation" Type="InArgument(x:String)" />
+    <x:Property Name="in_dateCurrentValue" Type="InArgument(s:DateTime)" />
+    <x:Property Name="in_decPH" Type="InArgument(x:Decimal)" />
+    <x:Property Name="in_decPrzewodnosc" Type="InArgument(x:Decimal)" />
+    <x:Property Name="in_decTlen" Type="InArgument(x:Decimal)" />
+    <x:Property Name="in_decTemp" Type="InArgument(x:Decimal)" />
+  </x:Members>
+  <this:CheckLastRecord.in_decPH>
+    <InArgument x:TypeArguments="x:Decimal" />
+  </this:CheckLastRecord.in_decPH>
+  <this:CheckLastRecord.in_decPrzewodnosc>
+    <InArgument x:TypeArguments="x:Decimal" />
+  </this:CheckLastRecord.in_decPrzewodnosc>
+  <this:CheckLastRecord.in_decTlen>
+    <InArgument x:TypeArguments="x:Decimal" />
+  </this:CheckLastRecord.in_decTlen>
+  <this:CheckLastRecord.in_decTemp>
+    <InArgument x:TypeArguments="x:Decimal" />
+  </this:CheckLastRecord.in_decTemp>
+  <sap:VirtualizedContainerService.HintSize>857,1529</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.Activities.System.FileOperations</x:String>
+      <x:String>UiPath.Activities.System.Encode</x:String>
+      <x:String>UiPath.Activities.System.Compression.Workflow</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.CSV</x:String>
+      <x:String>UiPath.CSV.Activities</x:String>
+      <x:String>UiPath.DataService.Activities</x:String>
+      <x:String>UiPath.DataService.Definition</x:String>
+      <x:String>UiPath.DataService.Activities.Models</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>Pomiary_Performer</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>System.Collections.Specialized</x:String>
+      <x:String>UiPath.Web.Activities</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>UiPath.Web</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>UiPath.CodedWorkflows</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>netstandard</AssemblyReference>
+      <AssemblyReference>UiPath.DataService.Activities.Core</AssemblyReference>
+      <AssemblyReference>UiPath.DataService.Definition</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>DataService.Pomiary_Performer</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.Collections.Specialized</AssemblyReference>
+      <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="check last record - Sequence" sap:VirtualizedContainerService.HintSize="559,1464" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Int64" Name="totalRecords" />
+      <Variable x:TypeArguments="njl:JObject" Name="jObject" />
+      <Variable x:TypeArguments="s:DateTime" Name="dateLastEntry" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Switch x:TypeArguments="x:String" DisplayName="itemm record query - Switch Workflow" Expression="[in_strLocation]" sap:VirtualizedContainerService.HintSize="497,350" sap2010:WorkflowViewState.IdRef="Switch`1_2">
+      <Switch.Default>
+        <Throw DisplayName="B102 - Throw" Exception="[new BusinessRuleException(&quot;B102 - Unknown loccation encountered: &quot; &amp; in_strLocation)]" sap:VirtualizedContainerService.HintSize="334,90" sap2010:WorkflowViewState.IdRef="Throw_2" />
+      </Switch.Default>
+      <Sequence x:Key="zawada" DisplayName="zawada Sequence" sap:VirtualizedContainerService.HintSize="534,593" sap2010:WorkflowViewState.IdRef="Sequence_7">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="scg:IList(p:Zawada)" Name="outputRecords_Zawada" />
+        </Sequence.Variables>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <uda:QueryEntityRecords x:TypeArguments="p:Zawada" FilterArguments="{x:Null}" FilterValues="{x:Null}" ContinueOnError="False" DisplayName="zawada Query Entity Records" EntityId="4911e0cd-b936-ef11-86c3-000d3ab405d7" ExpansionDepth="2" sap:VirtualizedContainerService.HintSize="472,172" sap2010:WorkflowViewState.IdRef="QueryEntityRecords`1_1" OutputRecords="[outputRecords_Zawada]" QueriedEntityId="4911e0cd-b936-ef11-86c3-000d3ab405d7" Skip="0" SortAscending="False" SortByField="Id" TimeoutInMs="30000" Top="1" TotalRecords="{x:Null}" />
+        <TryCatch DisplayName="zawada date cast - Try Catch" sap:VirtualizedContainerService.HintSize="472,333" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+          <TryCatch.Try>
+            <Assign DisplayName="zawada dateLastEntry - Assign" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_2">
+              <Assign.To>
+                <OutArgument x:TypeArguments="s:DateTime">[dateLastEntry]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="s:DateTime">[datetime.Parse(outputRecords_Zawada.first().dateTime.ToString)]</InArgument>
+              </Assign.Value>
+            </Assign>
+          </TryCatch.Try>
+          <TryCatch.Catches>
+            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="438,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ActivityAction x:TypeArguments="s:Exception">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                </ActivityAction.Argument>
+                <Assign DisplayName="zawada now - Assign" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_7">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="s:DateTime">[dateLastEntry]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="s:DateTime">[now]</InArgument>
+                  </Assign.Value>
+                </Assign>
+              </ActivityAction>
+            </Catch>
+          </TryCatch.Catches>
+        </TryCatch>
+      </Sequence>
+      <Sequence x:Key="wroblin" DisplayName="wroblin Sequence" sap:VirtualizedContainerService.HintSize="534,593" sap2010:WorkflowViewState.IdRef="Sequence_8">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="scg:IList(p:Wroblin)" Name="outputRecords_Wroblin" />
+        </Sequence.Variables>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <uda:QueryEntityRecords x:TypeArguments="p:Wroblin" FilterArguments="{x:Null}" FilterValues="{x:Null}" ContinueOnError="False" DisplayName="wroblin Query Entity Records" EntityId="63c03bb6-ba36-ef11-86c3-000d3ab405d7" ExpansionDepth="2" sap:VirtualizedContainerService.HintSize="472,172" sap2010:WorkflowViewState.IdRef="QueryEntityRecords`1_2" OutputRecords="[outputRecords_Wroblin]" QueriedEntityId="63c03bb6-ba36-ef11-86c3-000d3ab405d7" Skip="0" SortAscending="False" SortByField="Id" TimeoutInMs="30000" Top="1" TotalRecords="{x:Null}" />
+        <TryCatch DisplayName="wroblin date cast - Try Catch" sap:VirtualizedContainerService.HintSize="472,333" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+          <TryCatch.Try>
+            <Assign DisplayName="wroblin - dateLastEntry - Assign" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_3">
+              <Assign.To>
+                <OutArgument x:TypeArguments="s:DateTime">[dateLastEntry]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="s:DateTime">[datetime.Parse(outputRecords_Wroblin.first().dateTime.ToString)]</InArgument>
+              </Assign.Value>
+            </Assign>
+          </TryCatch.Try>
+          <TryCatch.Catches>
+            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="438,22" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ActivityAction x:TypeArguments="s:Exception">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                </ActivityAction.Argument>
+                <Assign DisplayName="wroblin now - " sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_8">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="s:DateTime">[dateLastEntry]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="s:DateTime">[now]</InArgument>
+                  </Assign.Value>
+                </Assign>
+              </ActivityAction>
+            </Catch>
+          </TryCatch.Catches>
+        </TryCatch>
+      </Sequence>
+      <Sequence x:Key="widuchowa" DisplayName="widuchowa  - Sequence" sap:VirtualizedContainerService.HintSize="496,467" sap2010:WorkflowViewState.IdRef="Sequence_9">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="scg:IList(p:Widuchowa)" Name="outputRecords_Widuchowa" />
+        </Sequence.Variables>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <uda:QueryEntityRecords x:TypeArguments="p:Widuchowa" FilterArguments="{x:Null}" FilterValues="{x:Null}" ContinueOnError="False" DisplayName="widuchowa - Query Entity Records" EntityId="6cc1b3e0-ba36-ef11-86c3-000d3ab405d7" ExpansionDepth="2" sap:VirtualizedContainerService.HintSize="434,172" sap2010:WorkflowViewState.IdRef="QueryEntityRecords`1_3" OutputRecords="[outputRecords_Widuchowa]" QueriedEntityId="6cc1b3e0-ba36-ef11-86c3-000d3ab405d7" Skip="0" SortAscending="False" SortByField="Id" TimeoutInMs="30000" Top="1" TotalRecords="{x:Null}" />
+        <TryCatch DisplayName="widuchowa date cast - Try Catch" sap:VirtualizedContainerService.HintSize="434,207" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+          <TryCatch.Try>
+            <Assign DisplayName="widuchowa - dateLastEntry - Assign" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_4">
+              <Assign.To>
+                <OutArgument x:TypeArguments="s:DateTime">[dateLastEntry]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="s:DateTime">[datetime.Parse(outputRecords_Widuchowa.first().dateTime.ToString)]</InArgument>
+              </Assign.Value>
+            </Assign>
+          </TryCatch.Try>
+          <TryCatch.Catches>
+            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,22" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ActivityAction x:TypeArguments="s:Exception">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                </ActivityAction.Argument>
+                <Assign DisplayName="widuchowa now - " sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_9">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="s:DateTime">[dateLastEntry]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="s:DateTime">[now]</InArgument>
+                  </Assign.Value>
+                </Assign>
+              </ActivityAction>
+            </Catch>
+          </TryCatch.Catches>
+        </TryCatch>
+      </Sequence>
+    </Switch>
+    <If Condition="[dateLastEntry = in_dateCurrentValue]" DisplayName="If Condition and Exception Handling" sap:VirtualizedContainerService.HintSize="497,396" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Then>
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,201" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Throw DisplayName="B101 - Throw BusinessRuleException" Exception="[new BusinessRuleException(&quot;B101 - No new data provided in source system&quot;)]" sap:VirtualizedContainerService.HintSize="354,113" sap2010:WorkflowViewState.IdRef="Throw_1" />
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,25" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </If.Else>
+    </If>
+    <Switch x:TypeArguments="x:String" DisplayName="insert item record - Switch Workflow" Expression="[in_strLocation]" sap:VirtualizedContainerService.HintSize="497,630" sap2010:WorkflowViewState.IdRef="Switch`1_3">
+      <uda:CreateEntityRecord x:TypeArguments="p:Zawada" InputEntity="{x:Null}" IsInRecordView="{x:Null}" OutputEntity="{x:Null}" VisibleDynamicPropertiesInfo="{x:Null}" x:Key="zawada" ContinueOnError="False" DisplayName="Zawada - Create Entity Record" EntityId="4911e0cd-b936-ef11-86c3-000d3ab405d7" ExpansionDepth="2" sap:VirtualizedContainerService.HintSize="334,377" sap2010:WorkflowViewState.IdRef="CreateEntityRecord`1_3" InputEntityInFieldView="[new Pomiary_Performer.Zawada() With {  .dateTime = in_dateCurrentValue,  .phValue = in_decPH,  .przewodnosc = in_decPrzewodnosc,  .temp = in_decTemp,  .tlen = in_decTlen }]" TimeoutInMs="30000">
+        <uda:CreateEntityRecord.State>
+          <udam:RecordState>
+            <udam:RecordState.SelectedFields>
+              <scg:List x:TypeArguments="udam:DynamicEntityField" Capacity="5">
+                <udam:DynamicEntityField Id="3d8a6772-ba36-ef11-86c3-000d3ab405d7" Name="dateTime">
+                  <udam:DynamicEntityField.ArgumentValue>
+                    <InArgument x:TypeArguments="s:DateTimeOffset">[in_dateCurrentValue]</InArgument>
+                  </udam:DynamicEntityField.ArgumentValue>
+                </udam:DynamicEntityField>
+                <udam:DynamicEntityField Id="75afe99e-ba36-ef11-86c3-000d3ab405d7" Name="phValue">
+                  <udam:DynamicEntityField.ArgumentValue>
+                    <InArgument x:TypeArguments="x:Decimal">[in_decPH]</InArgument>
+                  </udam:DynamicEntityField.ArgumentValue>
+                </udam:DynamicEntityField>
+                <udam:DynamicEntityField Id="fcf2c791-ba36-ef11-86c3-000d3ab405d7" Name="przewodnosc">
+                  <udam:DynamicEntityField.ArgumentValue>
+                    <InArgument x:TypeArguments="x:Decimal">[in_decPrzewodnosc]</InArgument>
+                  </udam:DynamicEntityField.ArgumentValue>
+                </udam:DynamicEntityField>
+                <udam:DynamicEntityField Id="75b03f84-ba36-ef11-86c3-000d3ab405d7" Name="temp">
+                  <udam:DynamicEntityField.ArgumentValue>
+                    <InArgument x:TypeArguments="x:Decimal">[in_decTemp]</InArgument>
+                  </udam:DynamicEntityField.ArgumentValue>
+                </udam:DynamicEntityField>
+                <udam:DynamicEntityField Id="b3e9dca7-ba36-ef11-86c3-000d3ab405d7" Name="tlen">
+                  <udam:DynamicEntityField.ArgumentValue>
+                    <InArgument x:TypeArguments="x:Decimal">[in_decTlen]</InArgument>
+                  </udam:DynamicEntityField.ArgumentValue>
+                </udam:DynamicEntityField>
+              </scg:List>
+            </udam:RecordState.SelectedFields>
+          </udam:RecordState>
+        </uda:CreateEntityRecord.State>
+      </uda:CreateEntityRecord>
+      <uda:CreateEntityRecord x:TypeArguments="p:Wroblin" InputEntity="{x:Null}" IsInRecordView="{x:Null}" OutputEntity="{x:Null}" VisibleDynamicPropertiesInfo="{x:Null}" x:Key="wroblin" ContinueOnError="False" DisplayName="Wroblin - Create Entity Record" EntityId="63c03bb6-ba36-ef11-86c3-000d3ab405d7" ExpansionDepth="2" sap:VirtualizedContainerService.HintSize="334,377" sap2010:WorkflowViewState.IdRef="CreateEntityRecord`1_6" InputEntityInFieldView="[new Pomiary_Performer.Wroblin() With {  .dateTime = in_dateCurrentValue,  .phValue = in_decPH,  .przewodnosc = in_decPrzewodnosc,  .temp = in_decTemp,  .tlen = in_decTlen }]" TimeoutInMs="30000">
+        <uda:CreateEntityRecord.State>
+          <udam:RecordState>
+            <udam:RecordState.SelectedFields>
+              <scg:List x:TypeArguments="udam:DynamicEntityField" Capacity="5">
+                <udam:DynamicEntityField Id="312311f6-ba36-ef11-86c3-000d3ab405d7" Name="dateTime">
+                  <udam:DynamicEntityField.ArgumentValue>
+                    <InArgument x:TypeArguments="s:DateTimeOffset">[in_dateCurrentValue]</InArgument>
+                  </udam:DynamicEntityField.ArgumentValue>
+                </udam:DynamicEntityField>
+                <udam:DynamicEntityField Id="957adc08-bb36-ef11-86c3-000d3ab405d7" Name="phValue">
+                  <udam:DynamicEntityField.ArgumentValue>
+                    <InArgument x:TypeArguments="x:Decimal">[in_decPH]</InArgument>
+                  </udam:DynamicEntityField.ArgumentValue>
+                </udam:DynamicEntityField>
+                <udam:DynamicEntityField Id="947adc08-bb36-ef11-86c3-000d3ab405d7" Name="przewodnosc">
+                  <udam:DynamicEntityField.ArgumentValue>
+                    <InArgument x:TypeArguments="x:Decimal">[in_decPrzewodnosc]</InArgument>
+                  </udam:DynamicEntityField.ArgumentValue>
+                </udam:DynamicEntityField>
+                <udam:DynamicEntityField Id="de3fe9ff-ba36-ef11-86c3-000d3ab405d7" Name="temp">
+                  <udam:DynamicEntityField.ArgumentValue>
+                    <InArgument x:TypeArguments="x:Decimal">[in_decTemp]</InArgument>
+                  </udam:DynamicEntityField.ArgumentValue>
+                </udam:DynamicEntityField>
+                <udam:DynamicEntityField Id="861ea214-bb36-ef11-86c3-000d3ab405d7" Name="tlen">
+                  <udam:DynamicEntityField.ArgumentValue>
+                    <InArgument x:TypeArguments="x:Decimal">[in_decTlen]</InArgument>
+                  </udam:DynamicEntityField.ArgumentValue>
+                </udam:DynamicEntityField>
+              </scg:List>
+            </udam:RecordState.SelectedFields>
+          </udam:RecordState>
+        </uda:CreateEntityRecord.State>
+      </uda:CreateEntityRecord>
+      <uda:CreateEntityRecord x:TypeArguments="p:Widuchowa" InputEntity="{x:Null}" IsInRecordView="{x:Null}" OutputEntity="{x:Null}" VisibleDynamicPropertiesInfo="{x:Null}" x:Key="widuchowa" ContinueOnError="False" DisplayName="Widuchowa - Create Entity Record" EntityId="6cc1b3e0-ba36-ef11-86c3-000d3ab405d7" ExpansionDepth="2" sap:VirtualizedContainerService.HintSize="334,377" sap2010:WorkflowViewState.IdRef="CreateEntityRecord`1_4" InputEntityInFieldView="[new Pomiary_Performer.Widuchowa() With {  .dateTime = in_dateCurrentValue,  .phValue = in_decPH,  .przewodnosc = in_decPrzewodnosc,  .temp = in_decTemp,  .tlen = in_decTlen }]" TimeoutInMs="30000">
+        <uda:CreateEntityRecord.State>
+          <udam:RecordState>
+            <udam:RecordState.SelectedFields>
+              <scg:List x:TypeArguments="udam:DynamicEntityField" Capacity="5">
+                <udam:DynamicEntityField Id="e66aa13d-bb36-ef11-86c3-000d3ab405d7" Name="dateTime">
+                  <udam:DynamicEntityField.ArgumentValue>
+                    <InArgument x:TypeArguments="s:DateTimeOffset">[in_dateCurrentValue]</InArgument>
+                  </udam:DynamicEntityField.ArgumentValue>
+                </udam:DynamicEntityField>
+                <udam:DynamicEntityField Id="51af944e-bb36-ef11-86c3-000d3ab405d7" Name="phValue">
+                  <udam:DynamicEntityField.ArgumentValue>
+                    <InArgument x:TypeArguments="x:Decimal">[in_decPH]</InArgument>
+                  </udam:DynamicEntityField.ArgumentValue>
+                </udam:DynamicEntityField>
+                <udam:DynamicEntityField Id="84a55948-bb36-ef11-86c3-000d3ab405d7" Name="przewodnosc">
+                  <udam:DynamicEntityField.ArgumentValue>
+                    <InArgument x:TypeArguments="x:Decimal">[in_decPrzewodnosc]</InArgument>
+                  </udam:DynamicEntityField.ArgumentValue>
+                </udam:DynamicEntityField>
+                <udam:DynamicEntityField Id="e76aa13d-bb36-ef11-86c3-000d3ab405d7" Name="temp">
+                  <udam:DynamicEntityField.ArgumentValue>
+                    <InArgument x:TypeArguments="x:Decimal">[in_decTemp]</InArgument>
+                  </udam:DynamicEntityField.ArgumentValue>
+                </udam:DynamicEntityField>
+                <udam:DynamicEntityField Id="52af944e-bb36-ef11-86c3-000d3ab405d7" Name="tlen">
+                  <udam:DynamicEntityField.ArgumentValue>
+                    <InArgument x:TypeArguments="x:Decimal">[in_decTlen]</InArgument>
+                  </udam:DynamicEntityField.ArgumentValue>
+                </udam:DynamicEntityField>
+              </scg:List>
+            </udam:RecordState.SelectedFields>
+          </udam:RecordState>
+        </uda:CreateEntityRecord.State>
+      </uda:CreateEntityRecord>
+    </Switch>
+  </Sequence>
+</Activity>

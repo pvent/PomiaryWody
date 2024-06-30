@@ -4,7 +4,7 @@
     <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="in_strItemName" Type="InArgument(x:String)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>903,2835</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>857,2136</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -127,7 +127,7 @@
       <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="CompareValues" sap:VirtualizedContainerService.HintSize="688,2770" sap2010:WorkflowViewState.IdRef="Sequence_13">
+  <Sequence DisplayName="CompareValues" sap:VirtualizedContainerService.HintSize="574,2071" sap2010:WorkflowViewState.IdRef="Sequence_13">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Decimal" Name="decPH" />
       <Variable x:TypeArguments="x:Decimal" Name="decPrzewodnosc" />
@@ -145,13 +145,13 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="convert values - Sequence" sap:VirtualizedContainerService.HintSize="626,57" sap2010:WorkflowViewState.IdRef="Sequence_21">
+    <Sequence DisplayName="convert values - Sequence" sap:VirtualizedContainerService.HintSize="512,805" sap2010:WorkflowViewState.IdRef="Sequence_21">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:Int32" Name="idx" />
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -165,57 +165,52 @@
       </Assign>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Temp - ConvertToDec.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Process\ConvertToDec.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <OutArgument x:TypeArguments="x:Decimal" x:Key="out_decValue">
-            <VisualBasicReference x:TypeArguments="x:Decimal" ExpressionText="decTemp" />
-          </OutArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_strValue">
-            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="dtItem(0)(1).tostring" />
-          </InArgument>
+          <OutArgument x:TypeArguments="x:Decimal" x:Key="out_decValue">[decTemp]</OutArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_strValue">[dtItem(0)(1).tostring]</InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="przewodnosc - ConvertToDec.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Process\ConvertToDec.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <OutArgument x:TypeArguments="x:Decimal" x:Key="out_decValue">
-            <VisualBasicReference x:TypeArguments="x:Decimal" ExpressionText="decPrzewodnosc" />
-          </OutArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_strValue">
-            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="dtItem(0)(2).tostring" />
-          </InArgument>
+          <OutArgument x:TypeArguments="x:Decimal" x:Key="out_decValue">[decPrzewodnosc]</OutArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_strValue">[dtItem(0)(2).tostring]</InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="pH - ConvertToDec.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Process\ConvertToDec.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <OutArgument x:TypeArguments="x:Decimal" x:Key="out_decValue">
-            <VisualBasicReference x:TypeArguments="x:Decimal" ExpressionText="decPH" />
-          </OutArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_strValue">
-            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="dtItem(0)(3).tostring" />
-          </InArgument>
+          <OutArgument x:TypeArguments="x:Decimal" x:Key="out_decValue">[decPH]</OutArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_strValue">[dtItem(0)(3).tostring]</InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="tlen - ConvertToDec.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,136" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Process\ConvertToDec.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <OutArgument x:TypeArguments="x:Decimal" x:Key="out_decValue">
-            <VisualBasicReference x:TypeArguments="x:Decimal" ExpressionText="decTlen" />
-          </OutArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_strValue">
-            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="dtItem(0)(4).tostring" />
-          </InArgument>
+          <OutArgument x:TypeArguments="x:Decimal" x:Key="out_decValue">[decTlen]</OutArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_strValue">[dtItem(0)(4).tostring]</InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
     </Sequence>
-    <Sequence DisplayName="log values - Sequence" sap:VirtualizedContainerService.HintSize="626,803" sap2010:WorkflowViewState.IdRef="Sequence_27">
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-      <ui:LogMessage DisplayName="temmp - Log Message" sap:VirtualizedContainerService.HintSize="388,173" sap2010:WorkflowViewState.IdRef="LogMessage_6" Message="[&quot;temp: &quot; &amp; boolTempOver &amp; &quot; value: &quot; &amp; decTemp.ToString]" />
-      <ui:LogMessage DisplayName="przewo - Log Message" sap:VirtualizedContainerService.HintSize="388,173" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;przewodnosc: &quot; &amp; boolPrzewodnoscOver.ToString &amp; &quot; value: &quot; &amp;  decPrzewodnosc.ToString]" />
-      <ui:LogMessage DisplayName="pH - Log Message" sap:VirtualizedContainerService.HintSize="388,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;ph: &quot; &amp; boolPHOver.ToString &amp; &quot; value: &quot; &amp; decPH.ToString]" />
-      <ui:LogMessage DisplayName="tlen - Log Message" sap:VirtualizedContainerService.HintSize="388,164" sap2010:WorkflowViewState.IdRef="LogMessage_3" Message="[&quot;tlen: &quot; &amp; boolTlenOver.ToString &amp; &quot; value: &quot; &amp; decTlen]" />
-    </Sequence>
-    <Sequence DisplayName="check if warning needed - Sequence" sap:VirtualizedContainerService.HintSize="626,1191" sap2010:WorkflowViewState.IdRef="Sequence_26">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CheckLastRecord.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="512,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Process\CheckLastRecord.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strLocation">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strItemName" />
+        </InArgument>
+        <InArgument x:TypeArguments="s:DateTime" x:Key="in_dateCurrentValue">
+          <VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="dateStamp" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:Decimal" x:Key="in_decPH">
+          <VisualBasicValue x:TypeArguments="x:Decimal" ExpressionText="decPH" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:Decimal" x:Key="in_decPrzewodnosc">
+          <VisualBasicValue x:TypeArguments="x:Decimal" ExpressionText="decPrzewodnosc" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:Decimal" x:Key="in_decTlen">
+          <VisualBasicValue x:TypeArguments="x:Decimal" ExpressionText="decTlen" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:Decimal" x:Key="in_decTemp">
+          <VisualBasicValue x:TypeArguments="x:Decimal" ExpressionText="decTemp" />
+        </InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <Sequence DisplayName="check if warning needed - Sequence" sap:VirtualizedContainerService.HintSize="512,396" sap2010:WorkflowViewState.IdRef="Sequence_26">
       <Sequence.Variables>
         <Variable x:TypeArguments="s:Boolean[]" Name="arrBoolFlags" />
         <Variable x:TypeArguments="x:Int32" Name="idx" />
@@ -227,7 +222,7 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <If Condition="[decTemp  &gt; cint(in_Config(&quot;temperatura&quot;).ToString)]" DisplayName="temp - If" sap:VirtualizedContainerService.HintSize="564,57" sap2010:WorkflowViewState.IdRef="If_8">
+      <If Condition="[decTemp  &gt; cint(in_Config(&quot;temperatura&quot;).ToString) or decTemp = 0]" DisplayName="temp - If" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="If_8">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -261,7 +256,7 @@
           </Sequence>
         </If.Else>
       </If>
-      <If Condition="[decPrzewodnosc &gt; cint(in_Config(&quot;przewodnosc&quot;).ToString)]" DisplayName="przewodowosc - If" sap:VirtualizedContainerService.HintSize="564,57" sap2010:WorkflowViewState.IdRef="If_2">
+      <If Condition="[decPrzewodnosc &gt; cint(in_Config(&quot;przewodnosc&quot;).ToString) or decPrzewodnosc = 0]" DisplayName="przewodowosc - If" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="If_2">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -295,7 +290,7 @@
           </Sequence>
         </If.Else>
       </If>
-      <If Condition="[decPH &gt; cint(in_Config(&quot;pH&quot;).ToString)]" DisplayName="PH - If" sap:VirtualizedContainerService.HintSize="564,57" sap2010:WorkflowViewState.IdRef="If_1">
+      <If Condition="[decPH &gt; cint(in_Config(&quot;pH&quot;).ToString) or decPH = 0]" DisplayName="PH - If" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="If_1">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -329,7 +324,7 @@
           </Sequence>
         </If.Else>
       </If>
-      <If Condition="[decTlen &gt;  CInt(in_Config(&quot;tlenHigh&quot;).ToString)  Or decTlen &lt;  CInt(in_Config(&quot;tlenLow&quot;).ToString)]" DisplayName="tlen - If" sap:VirtualizedContainerService.HintSize="564,57" sap2010:WorkflowViewState.IdRef="If_3">
+      <If Condition="[decTlen &gt;  CInt(in_Config(&quot;tlenHigh&quot;).ToString)  Or decTlen &lt;  CInt(in_Config(&quot;tlenLow&quot;).ToString) or decTlen = 0]" DisplayName="tlen - If" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="If_3">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -363,61 +358,20 @@
           </Sequence>
         </If.Else>
       </If>
-      <Assign DisplayName="arr of bool flags - Assign" sap:VirtualizedContainerService.HintSize="564,114" sap2010:WorkflowViewState.IdRef="Assign_29">
-        <Assign.To>
-          <OutArgument x:TypeArguments="s:Boolean[]">[arrBoolFlags]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="s:Boolean[]">[{boolTempOver, boolPrzewodnoscOver, boolPHOver, boolTlenOver}]</InArgument>
-        </Assign.Value>
-      </Assign>
-      <Assign DisplayName="arr dec values - Assign" sap:VirtualizedContainerService.HintSize="564,114" sap2010:WorkflowViewState.IdRef="Assign_30">
-        <Assign.To>
-          <OutArgument x:TypeArguments="s:Decimal[]">[arrDecVlues]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="s:Decimal[]">[{decTemp, decPrzewodnosc, decPH, decTlen}]</InArgument>
-        </Assign.Value>
-      </Assign>
-      <ui:ForEach x:TypeArguments="x:Boolean" CurrentIndex="[idx]" DisplayName="check error flags - For Each" sap:VirtualizedContainerService.HintSize="564,615" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[arrBoolFlags]">
-        <ui:ForEach.Body>
-          <ActivityAction x:TypeArguments="x:Boolean">
-            <ActivityAction.Argument>
-              <DelegateInArgument x:TypeArguments="x:Boolean" Name="cFlag" />
-            </ActivityAction.Argument>
-            <If Condition="[0.00 = arrDecVlues(idx)]" DisplayName="errored values - If" sap:VirtualizedContainerService.HintSize="530,428" sap2010:WorkflowViewState.IdRef="If_9">
-              <If.Then>
-                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,190" sap2010:WorkflowViewState.IdRef="Sequence_28">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <Assign DisplayName="Errored value flag switch - Assign" sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_31">
-                    <Assign.To>
-                      <OutArgument x:TypeArguments="x:Boolean">[arrBoolFlags(idx)]</OutArgument>
-                    </Assign.To>
-                    <Assign.Value>
-                      <InArgument x:TypeArguments="x:Boolean">True</InArgument>
-                    </Assign.Value>
-                  </Assign>
-                </Sequence>
-              </If.Then>
-              <If.Else>
-                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,100" sap2010:WorkflowViewState.IdRef="Sequence_29">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </Sequence>
-              </If.Else>
-            </If>
-          </ActivityAction>
-        </ui:ForEach.Body>
-      </ui:ForEach>
+      <Sequence DisplayName="log values - Sequence" sap:VirtualizedContainerService.HintSize="450,48" sap2010:WorkflowViewState.IdRef="Sequence_27">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:LogMessage DisplayName="temmp - Log Message" sap:VirtualizedContainerService.HintSize="388,173" sap2010:WorkflowViewState.IdRef="LogMessage_6" Message="[&quot;temp: &quot; &amp; boolTempOver &amp; &quot; value: &quot; &amp; decTemp.ToString]" />
+        <ui:LogMessage DisplayName="przewo - Log Message" sap:VirtualizedContainerService.HintSize="388,173" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;przewodnosc: &quot; &amp; boolPrzewodnoscOver.ToString &amp; &quot; value: &quot; &amp;  decPrzewodnosc.ToString]" />
+        <ui:LogMessage DisplayName="pH - Log Message" sap:VirtualizedContainerService.HintSize="388,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;ph: &quot; &amp; boolPHOver.ToString &amp; &quot; value: &quot; &amp; decPH.ToString]" />
+        <ui:LogMessage DisplayName="tlen - Log Message" sap:VirtualizedContainerService.HintSize="388,164" sap2010:WorkflowViewState.IdRef="LogMessage_3" Message="[&quot;tlen: &quot; &amp; boolTlenOver.ToString &amp; &quot; value: &quot; &amp; decTlen]" />
+      </Sequence>
     </Sequence>
-    <If Condition="[boolPHOver or boolPrzewodnoscOver or boolTlenOver]" DisplayName="any over value - If" sap:VirtualizedContainerService.HintSize="626,631" sap2010:WorkflowViewState.IdRef="If_10">
+    <If Condition="[boolPHOver or boolPrzewodnoscOver or boolTlenOver or boolTempOver]" DisplayName="any over value - If" sap:VirtualizedContainerService.HintSize="512,637" sap2010:WorkflowViewState.IdRef="If_10">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -425,7 +379,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,221" sap2010:WorkflowViewState.IdRef="Sequence_31">
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,224" sap2010:WorkflowViewState.IdRef="Sequence_31">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -433,20 +387,23 @@
           </sap:WorkflowViewStateService.ViewState>
           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CreateHtmlData.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,136" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Process\CreateHtmlData.xaml">
             <ui:InvokeWorkflowFile.Arguments>
-              <InArgument x:TypeArguments="x:Boolean" x:Key="boolPHOver">[boolPHOver]</InArgument>
-              <InArgument x:TypeArguments="x:Boolean" x:Key="boolPrzewodnoscOver">[boolPrzewodnoscOver]</InArgument>
-              <InArgument x:TypeArguments="x:Boolean" x:Key="boolTlenOver">[boolTlenOver]</InArgument>
-              <InOutArgument x:TypeArguments="x:String" x:Key="strBodyHtml">[strBodyHtml]</InOutArgument>
               <InArgument x:TypeArguments="x:String" x:Key="in_strItemName">[in_strItemName]</InArgument>
-              <InArgument x:TypeArguments="x:Decimal" x:Key="decPH">[decPH]</InArgument>
-              <InArgument x:TypeArguments="x:Decimal" x:Key="decPrzewodnosc">[decPrzewodnosc]</InArgument>
-              <InArgument x:TypeArguments="x:Decimal" x:Key="decTlen">[decTlen]</InArgument>
+              <InArgument x:TypeArguments="s:DateTime" x:Key="in_dateStamp">[dateStamp]</InArgument>
+              <InArgument x:TypeArguments="x:Boolean" x:Key="in_boolPHOver">[boolPHOver]</InArgument>
+              <InArgument x:TypeArguments="x:Boolean" x:Key="in_boolPrzewodnoscOver">[boolPrzewodnoscOver]</InArgument>
+              <InArgument x:TypeArguments="x:Boolean" x:Key="in_boolTlenOver">[boolTlenOver]</InArgument>
+              <InOutArgument x:TypeArguments="x:String" x:Key="io_strBodyHtml">[strBodyHtml]</InOutArgument>
+              <InArgument x:TypeArguments="x:Decimal" x:Key="in_decPH">[decPH]</InArgument>
+              <InArgument x:TypeArguments="x:Decimal" x:Key="in_decPrzewodnosc">[decPrzewodnosc]</InArgument>
+              <InArgument x:TypeArguments="x:Decimal" x:Key="in_decTlen">[decTlen]</InArgument>
+              <InArgument x:TypeArguments="x:Decimal" x:Key="in_decTemp">[decTemp]</InArgument>
+              <InArgument x:TypeArguments="x:Boolean" x:Key="in_boolTempOver">[boolTempOver]</InArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,249" sap2010:WorkflowViewState.IdRef="Sequence_32">
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,252" sap2010:WorkflowViewState.IdRef="Sequence_32">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>

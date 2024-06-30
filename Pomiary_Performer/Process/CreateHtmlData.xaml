@@ -1,23 +1,27 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="CreateHtmlData" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="clr-namespace:Pomiary_Performer;assembly=DataService.Pomiary_Performer" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:uda="clr-namespace:UiPath.DataService.Activities;assembly=UiPath.DataService.Activities.Core" xmlns:udam="clr-namespace:UiPath.DataService.Activities.Models;assembly=UiPath.DataService.Activities.Core" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="CreateHtmlData" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="clr-namespace:Pomiary_Performer;assembly=DataService.Pomiary_Performer" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:uda="clr-namespace:UiPath.DataService.Activities;assembly=UiPath.DataService.Activities.Core" xmlns:udam="clr-namespace:UiPath.DataService.Activities.Models;assembly=UiPath.DataService.Activities.Core" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="boolPHOver" Type="InArgument(x:Boolean)" />
-    <x:Property Name="boolPrzewodnoscOver" Type="InArgument(x:Boolean)" />
-    <x:Property Name="boolTlenOver" Type="InArgument(x:Boolean)" />
-    <x:Property Name="strBodyHtml" Type="InOutArgument(x:String)" />
     <x:Property Name="in_strItemName" Type="InArgument(x:String)" />
-    <x:Property Name="decPH" Type="InArgument(x:Decimal)" />
-    <x:Property Name="decPrzewodnosc" Type="InArgument(x:Decimal)" />
-    <x:Property Name="decTlen" Type="InArgument(x:Decimal)" />
-    <x:Property Name="decTemp" Type="InArgument(x:Decimal)" />
-    <x:Property Name="boolTempOver" Type="InArgument(x:Boolean)" />
+    <x:Property Name="in_dateStamp" Type="InArgument(s:DateTime)" />
+    <x:Property Name="in_boolPHOver" Type="InArgument(x:Boolean)" />
+    <x:Property Name="in_boolPrzewodnoscOver" Type="InArgument(x:Boolean)" />
+    <x:Property Name="in_boolTlenOver" Type="InArgument(x:Boolean)" />
+    <x:Property Name="io_strBodyHtml" Type="InOutArgument(x:String)" />
+    <x:Property Name="in_decPH" Type="InArgument(x:Decimal)" />
+    <x:Property Name="in_decPrzewodnosc" Type="InArgument(x:Decimal)" />
+    <x:Property Name="in_decTlen" Type="InArgument(x:Decimal)" />
+    <x:Property Name="in_decTemp" Type="InArgument(x:Decimal)" />
+    <x:Property Name="in_boolTempOver" Type="InArgument(x:Boolean)" />
   </x:Members>
-  <this:CreateHtmlData.decTemp>
+  <this:CreateHtmlData.in_dateStamp>
+    <InArgument x:TypeArguments="s:DateTime" />
+  </this:CreateHtmlData.in_dateStamp>
+  <this:CreateHtmlData.in_decTemp>
     <InArgument x:TypeArguments="x:Decimal" />
-  </this:CreateHtmlData.decTemp>
-  <this:CreateHtmlData.boolTempOver>
+  </this:CreateHtmlData.in_decTemp>
+  <this:CreateHtmlData.in_boolTempOver>
     <InArgument x:TypeArguments="x:Boolean" />
-  </this:CreateHtmlData.boolTempOver>
-  <sap:VirtualizedContainerService.HintSize>903,1523</sap:VirtualizedContainerService.HintSize>
+  </this:CreateHtmlData.in_boolTempOver>
+  <sap:VirtualizedContainerService.HintSize>1807,1810</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -130,13 +134,16 @@
       <AssemblyReference>System.Linq.Async</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="CreateHtmlData" sap:VirtualizedContainerService.HintSize="654,1458" sap2010:WorkflowViewState.IdRef="Sequence_21">
+  <Sequence DisplayName="CreateHtmlData" sap:VirtualizedContainerService.HintSize="654,1745" sap2010:WorkflowViewState.IdRef="Sequence_21">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="p:Mailer" Name="mailerCreatedRecord" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="create body - Sequence" sap:VirtualizedContainerService.HintSize="592,1174" sap2010:WorkflowViewState.IdRef="Sequence_14">
+    <Sequence DisplayName="create body - Sequence" sap:VirtualizedContainerService.HintSize="592,1288" sap2010:WorkflowViewState.IdRef="Sequence_14">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -145,7 +152,7 @@
       </sap:WorkflowViewStateService.ViewState>
       <Assign DisplayName="start of row - Assign" sap:VirtualizedContainerService.HintSize="530,114" sap2010:WorkflowViewState.IdRef="Assign_15">
         <Assign.To>
-          <OutArgument x:TypeArguments="x:String">[strBodyHtml]</OutArgument>
+          <OutArgument x:TypeArguments="x:String">[io_strBodyHtml]</OutArgument>
         </Assign.To>
         <Assign.Value>
           <InArgument x:TypeArguments="x:String" xml:space="preserve"> &lt;tr&gt;</InArgument>
@@ -153,13 +160,21 @@
       </Assign>
       <Assign DisplayName="item name - Assign" sap:VirtualizedContainerService.HintSize="530,114" sap2010:WorkflowViewState.IdRef="Assign_23">
         <Assign.To>
-          <OutArgument x:TypeArguments="x:String">[strBodyHtml]</OutArgument>
+          <OutArgument x:TypeArguments="x:String">[io_strBodyHtml]</OutArgument>
         </Assign.To>
         <Assign.Value>
-          <InArgument x:TypeArguments="x:String">[strBodyHtml &amp; "&lt;td&gt;" &amp; in_strItemName &amp; "&lt;/td&gt;"]</InArgument>
+          <InArgument x:TypeArguments="x:String">[io_strBodyHtml &amp; "&lt;td&gt;" &amp; in_strItemName &amp; "&lt;/td&gt;"]</InArgument>
         </Assign.Value>
       </Assign>
-      <If Condition="[boolTempOver]" DisplayName="temp body - If" sap:VirtualizedContainerService.HintSize="530,550" sap2010:WorkflowViewState.IdRef="If_8">
+      <Assign DisplayName="date - Assign" sap:VirtualizedContainerService.HintSize="530,114" sap2010:WorkflowViewState.IdRef="Assign_26">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[io_strBodyHtml]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[io_strBodyHtml &amp; "&lt;td&gt;" &amp; in_dateStamp.ToString &amp; "&lt;/td&gt;"]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <If Condition="[in_boolTempOver]" DisplayName="temp body - If" sap:VirtualizedContainerService.HintSize="530,550" sap2010:WorkflowViewState.IdRef="If_8">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -175,10 +190,10 @@
             </sap:WorkflowViewStateService.ViewState>
             <Assign DisplayName="alert temp - Assign" sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_24">
               <Assign.To>
-                <OutArgument x:TypeArguments="x:String">[strBodyHtml]</OutArgument>
+                <OutArgument x:TypeArguments="x:String">[io_strBodyHtml]</OutArgument>
               </Assign.To>
               <Assign.Value>
-                <InArgument x:TypeArguments="x:String">[strBodyHtml &amp; "&lt;td &gt;! " &amp; decTemp.ToString &amp; " !&lt;/td&gt;"]</InArgument>
+                <InArgument x:TypeArguments="x:String">[io_strBodyHtml &amp; "&lt;td &gt;! " &amp; in_decTemp.ToString &amp; " !&lt;/td&gt;"]</InArgument>
               </Assign.Value>
             </Assign>
           </Sequence>
@@ -192,16 +207,16 @@
             </sap:WorkflowViewStateService.ViewState>
             <Assign DisplayName="low temp - Assign" sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_25">
               <Assign.To>
-                <OutArgument x:TypeArguments="x:String">[strBodyHtml]</OutArgument>
+                <OutArgument x:TypeArguments="x:String">[io_strBodyHtml]</OutArgument>
               </Assign.To>
               <Assign.Value>
-                <InArgument x:TypeArguments="x:String">[strBodyHtml &amp; "&lt;td&gt;" &amp; decTemp.ToString &amp; "&lt;/td&gt;"]</InArgument>
+                <InArgument x:TypeArguments="x:String">[io_strBodyHtml &amp; "&lt;td&gt;" &amp; in_decTemp.ToString &amp; "&lt;/td&gt;"]</InArgument>
               </Assign.Value>
             </Assign>
           </Sequence>
         </If.Else>
       </If>
-      <If Condition="[boolPrzewodnoscOver]" DisplayName="przewodowosc body - If" sap:VirtualizedContainerService.HintSize="530,57" sap2010:WorkflowViewState.IdRef="If_6">
+      <If Condition="[in_boolPrzewodnoscOver]" DisplayName="przewodowosc body - If" sap:VirtualizedContainerService.HintSize="530,57" sap2010:WorkflowViewState.IdRef="If_6">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -217,10 +232,10 @@
             </sap:WorkflowViewStateService.ViewState>
             <Assign DisplayName="alert przewodowoscc - Assign" sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_18">
               <Assign.To>
-                <OutArgument x:TypeArguments="x:String">[strBodyHtml]</OutArgument>
+                <OutArgument x:TypeArguments="x:String">[io_strBodyHtml]</OutArgument>
               </Assign.To>
               <Assign.Value>
-                <InArgument x:TypeArguments="x:String">[strBodyHtml &amp; "&lt;td&gt;! " &amp; decPrzewodnosc.ToString &amp; " !&lt;/td&gt;"]</InArgument>
+                <InArgument x:TypeArguments="x:String">[io_strBodyHtml &amp; "&lt;td&gt;! " &amp; in_decPrzewodnosc.ToString &amp; " !&lt;/td&gt;"]</InArgument>
               </Assign.Value>
             </Assign>
           </Sequence>
@@ -234,16 +249,16 @@
             </sap:WorkflowViewStateService.ViewState>
             <Assign DisplayName="low przewodowosc - Assign" sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_19">
               <Assign.To>
-                <OutArgument x:TypeArguments="x:String">[strBodyHtml]</OutArgument>
+                <OutArgument x:TypeArguments="x:String">[io_strBodyHtml]</OutArgument>
               </Assign.To>
               <Assign.Value>
-                <InArgument x:TypeArguments="x:String">[strBodyHtml &amp; "&lt;td&gt;" &amp; decPrzewodnosc.ToString &amp; "&lt;/td&gt;"]</InArgument>
+                <InArgument x:TypeArguments="x:String">[io_strBodyHtml &amp; "&lt;td&gt;" &amp; in_decPrzewodnosc.ToString &amp; "&lt;/td&gt;"]</InArgument>
               </Assign.Value>
             </Assign>
           </Sequence>
         </If.Else>
       </If>
-      <If Condition="[boolPHOver]" DisplayName="PH body - If" sap:VirtualizedContainerService.HintSize="530,57" sap2010:WorkflowViewState.IdRef="If_5">
+      <If Condition="[in_boolPHOver]" DisplayName="PH body - If" sap:VirtualizedContainerService.HintSize="530,57" sap2010:WorkflowViewState.IdRef="If_5">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -259,10 +274,10 @@
             </sap:WorkflowViewStateService.ViewState>
             <Assign DisplayName="alert PH - Assign" sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_16">
               <Assign.To>
-                <OutArgument x:TypeArguments="x:String">[strBodyHtml]</OutArgument>
+                <OutArgument x:TypeArguments="x:String">[io_strBodyHtml]</OutArgument>
               </Assign.To>
               <Assign.Value>
-                <InArgument x:TypeArguments="x:String">[strBodyHtml &amp; "&lt;td &gt;! " &amp; decPH.ToString &amp; " !&lt;/td&gt;"]</InArgument>
+                <InArgument x:TypeArguments="x:String">[io_strBodyHtml &amp; "&lt;td &gt;! " &amp; in_decPH.ToString &amp; " !&lt;/td&gt;"]</InArgument>
               </Assign.Value>
             </Assign>
           </Sequence>
@@ -276,16 +291,16 @@
             </sap:WorkflowViewStateService.ViewState>
             <Assign DisplayName="low PH - Assign" sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_17">
               <Assign.To>
-                <OutArgument x:TypeArguments="x:String">[strBodyHtml]</OutArgument>
+                <OutArgument x:TypeArguments="x:String">[io_strBodyHtml]</OutArgument>
               </Assign.To>
               <Assign.Value>
-                <InArgument x:TypeArguments="x:String">[strBodyHtml &amp; "&lt;td&gt;" &amp; decPH.ToString &amp; "&lt;/td&gt;"]</InArgument>
+                <InArgument x:TypeArguments="x:String">[io_strBodyHtml &amp; "&lt;td&gt;" &amp; in_decPH.ToString &amp; "&lt;/td&gt;"]</InArgument>
               </Assign.Value>
             </Assign>
           </Sequence>
         </If.Else>
       </If>
-      <If Condition="[boolTlenOver]" DisplayName="tlen body - If" sap:VirtualizedContainerService.HintSize="530,57" sap2010:WorkflowViewState.IdRef="If_7">
+      <If Condition="[in_boolTlenOver]" DisplayName="tlen body - If" sap:VirtualizedContainerService.HintSize="530,57" sap2010:WorkflowViewState.IdRef="If_7">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -301,10 +316,10 @@
             </sap:WorkflowViewStateService.ViewState>
             <Assign DisplayName="alert tlen - Assign" sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_20">
               <Assign.To>
-                <OutArgument x:TypeArguments="x:String">[strBodyHtml]</OutArgument>
+                <OutArgument x:TypeArguments="x:String">[io_strBodyHtml]</OutArgument>
               </Assign.To>
               <Assign.Value>
-                <InArgument x:TypeArguments="x:String">[strBodyHtml &amp; "&lt;td&gt;! " &amp; decTlen.ToString &amp; " !&lt;/td&gt;"]</InArgument>
+                <InArgument x:TypeArguments="x:String">[io_strBodyHtml &amp; "&lt;td&gt;! " &amp; in_decTlen.ToString &amp; " !&lt;/td&gt;"]</InArgument>
               </Assign.Value>
             </Assign>
           </Sequence>
@@ -318,10 +333,10 @@
             </sap:WorkflowViewStateService.ViewState>
             <Assign DisplayName="low tlen - Assign" sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_21">
               <Assign.To>
-                <OutArgument x:TypeArguments="x:String">[strBodyHtml]</OutArgument>
+                <OutArgument x:TypeArguments="x:String">[io_strBodyHtml]</OutArgument>
               </Assign.To>
               <Assign.Value>
-                <InArgument x:TypeArguments="x:String">[strBodyHtml &amp; "&lt;td&gt;" &amp; decTlen.ToString &amp; "&lt;/td&gt;"]</InArgument>
+                <InArgument x:TypeArguments="x:String">[io_strBodyHtml &amp; "&lt;td&gt;" &amp; in_decTlen.ToString &amp; "&lt;/td&gt;"]</InArgument>
               </Assign.Value>
             </Assign>
           </Sequence>
@@ -329,14 +344,14 @@
       </If>
       <Assign DisplayName="end of row - Assign" sap:VirtualizedContainerService.HintSize="530,105" sap2010:WorkflowViewState.IdRef="Assign_22">
         <Assign.To>
-          <OutArgument x:TypeArguments="x:String">[strBodyHtml]</OutArgument>
+          <OutArgument x:TypeArguments="x:String">[io_strBodyHtml]</OutArgument>
         </Assign.To>
         <Assign.Value>
-          <InArgument x:TypeArguments="x:String">[strBodyHtml &amp; " &lt;/tr&gt;"]</InArgument>
+          <InArgument x:TypeArguments="x:String">[io_strBodyHtml &amp; " &lt;/tr&gt;"]</InArgument>
         </Assign.Value>
       </Assign>
     </Sequence>
-    <uda:CreateEntityRecord x:TypeArguments="p:Mailer" InputEntity="{x:Null}" IsInRecordView="{x:Null}" OutputEntity="{x:Null}" VisibleDynamicPropertiesInfo="{x:Null}" ContinueOnError="False" DisplayName="Create Entity Record" EntityId="37cf7d90-8e22-ef11-86d2-000d3ab405d7" ExpansionDepth="2" sap:VirtualizedContainerService.HintSize="592,196" sap2010:WorkflowViewState.IdRef="CreateEntityRecord`1_1" InputEntityInFieldView="[new Pomiary_Performer.Mailer() With {  .Body = strBodyHtml }]" TimeoutInMs="30000">
+    <uda:CreateEntityRecord x:TypeArguments="p:Mailer" InputEntity="{x:Null}" IsInRecordView="{x:Null}" VisibleDynamicPropertiesInfo="{x:Null}" ContinueOnError="False" DisplayName="Create Entity Record" EntityId="37cf7d90-8e22-ef11-86d2-000d3ab405d7" ExpansionDepth="2" sap:VirtualizedContainerService.HintSize="592,205" sap2010:WorkflowViewState.IdRef="CreateEntityRecord`1_1" InputEntityInFieldView="[new Pomiary_Performer.Mailer() With {  .Body = io_strBodyHtml }]" OutputEntity="[mailerCreatedRecord]" TimeoutInMs="30000">
       <uda:CreateEntityRecord.State>
         <udam:RecordState>
           <udam:RecordState.SelectedFields>
@@ -351,5 +366,6 @@
         </udam:RecordState>
       </uda:CreateEntityRecord.State>
     </uda:CreateEntityRecord>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="592,164" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[mailerCreatedRecord.Body]" />
   </Sequence>
 </Activity>
