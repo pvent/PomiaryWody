@@ -1,0 +1,223 @@
+{
+  "Workflows": [
+    {
+      "Path": null,
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "gb_Config&"
+      ],
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Main.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "gb_Config&Sequence_14",
+        "strTransactionID&StateMachine_1",
+        "strTransactionField1&StateMachine_1",
+        "strTransactionField2&StateMachine_1",
+        "intRetryNumber&StateMachine_1",
+        "intTransactionNumber&StateMachine_1",
+        "intConsecutiveSystemExceptions&StateMachine_1",
+        "ShouldStop&Sequence_7",
+        "BusinessException&StateMachine_1",
+        "TransactionItem&StateMachine_1",
+        "SystemException&StateMachine_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_OrchestratorQueueFolder",
+        "in_OrchestratorQueueName"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "framework/InitAllSettings.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "gb_Config&Sequence_4",
+        "dicConfig&Sequence_2",
+        "strConfig&Sequence_2",
+        "AssetValue&Sequence_18",
+        "jobjConfig&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_strConfigFile"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "framework/GetTransactionData.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "gb_Config&Sequence_18"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_TransactionNumber",
+        "out_TransactionItem",
+        "out_TransactionField1",
+        "out_TransactionField2",
+        "out_TransactionID"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "framework/SetTransactionStatus.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "gb_Config&Sequence_30",
+        "boolQueueRetry&Sequence_17"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_strTransactionField1",
+        "in_strTransactionField2",
+        "in_strTransactionID",
+        "io_intRetryNumber",
+        "io_intTransactionNumber",
+        "io_intConsecutiveSExceptions",
+        "in_BusinessException",
+        "in_SystemException",
+        "in_TransactionItem"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "framework/Process.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "gb_Config&Sequence_4"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_TransactionItem"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "framework/RetryCurrentTransaction.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "gb_Config&Sequence_18"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_boolQueueRetry",
+        "io_intTransactionNumber",
+        "io_intRetryNumber",
+        "in_SystemException"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "framework/Process (2).xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "gb_Config&Sequence_4"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_TransactionItem",
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "process/CheckLastRecord.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "gb_Config&Sequence_14",
+        "outputRecords_Widuchowa&Sequence_9",
+        "outputRecords_Wroblin&Sequence_8",
+        "outputRecords_Zawada&Sequence_7",
+        "totalRecords&Sequence_1",
+        "jObject&Sequence_1",
+        "dateLastEntry&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_strLocation",
+        "in_dateCurrentValue",
+        "in_decPH",
+        "in_decPrzewodnosc",
+        "in_decTlen",
+        "in_decTemp"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "process/ConvertToDec.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "gb_Config&Sequence_4"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_decValue",
+        "in_strValue"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process/GetData.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strInputTxt&Sequence_1",
+        "files&Sequence_1",
+        "gb_Config&Sequence_4",
+        "strUrl&Sequence_1",
+        "strDownloadFile&Sequence_1",
+        "strExtractedFile&Sequence_1",
+        "strCsvLocation&Sequence_1",
+        "dtItem&Sequence_1",
+        "strDateFormat&Sequence_1",
+        "decPrzewodnosc&Sequence_1",
+        "decPH&Sequence_1",
+        "decTlen&Sequence_1",
+        "cFile&Sequence_1",
+        "boolPHOver&Sequence_1",
+        "boolPrzewodowoscOver&Sequence_1",
+        "boolTlenOver&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config",
+        "in_strUrl",
+        "in_strItemName"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process/CompareValues.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "gb_Config&Sequence_4",
+        "decPH&Sequence_13",
+        "decPrzewodnosc&Sequence_13",
+        "decTlen&Sequence_13",
+        "boolPHOver&Sequence_13",
+        "boolPrzewodnoscOver&Sequence_13",
+        "boolTlenOver&Sequence_13",
+        "strBodyHtml&Sequence_13",
+        "decTemp&Sequence_13",
+        "dateStamp&Sequence_13",
+        "boolTempOver&Sequence_13",
+        "idx&Sequence_21",
+        "arrBoolFlags&Sequence_26",
+        "idx&Sequence_26",
+        "arrDecVlues&Sequence_26"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "dtItem",
+        "in_Config",
+        "in_strItemName"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    }
+  ]
+}

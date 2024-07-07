@@ -155,18 +155,21 @@
     {
       "Path": "Process/CreateHtmlData.xaml",
       "SortBy": 0,
-      "VariablesSectionElementsOrder": [],
+      "VariablesSectionElementsOrder": [
+        "mailerCreatedRecord&Sequence_21"
+      ],
       "ArgumentsSectionElementsOrder": [
-        "boolTempOver",
-        "decTemp",
-        "boolPHOver",
-        "boolPrzewodnoscOver",
-        "boolTlenOver",
-        "strBodyHtml",
-        "in_strItemName",
-        "decPH",
-        "decPrzewodnosc",
-        "decTlen"
+        "in_dateStamp",
+        "in_boolPHOver",
+        "in_boolPrzewodnoscOver",
+        "in_boolTlenOver",
+        "io_strBodyHtml",
+        "in_decPH",
+        "in_decPrzewodnosc",
+        "in_decTlen",
+        "in_decTemp",
+        "in_boolTempOver",
+        "in_strItemName"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
@@ -178,6 +181,54 @@
       "ArgumentsSectionElementsOrder": [
         "in_strValue",
         "out_decValue"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process/CheckLastRecord.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "outputRecords_Widuchowa&Sequence_9",
+        "outputRecords_Zawada&Sequence_7",
+        "outputRecords_Wroblin&Sequence_8",
+        "dateLastEntry&Sequence_1",
+        "jObject&Sequence_1",
+        "totalRecords&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_decTemp",
+        "in_decTlen",
+        "in_decPrzewodnosc",
+        "in_decPH",
+        "in_dateCurrentValue",
+        "in_strLocation"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/InitAllApplications.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/InitAllSettings.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dt_SettingsAndConstants&Sequence_5",
+        "dt_Assets&Sequence_6",
+        "AssetValue&Sequence_11"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_ConfigFile",
+        "in_ConfigSheets",
+        "out_Config"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null

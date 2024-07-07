@@ -7,10 +7,10 @@
     "UiPath.DataService.Activities": "[23.10.0]",
     "UiPath.Excel.Activities": "[2.23.4]",
     "UiPath.Mail.Activities": "[1.23.1]",
-    "UiPath.System.Activities.Runtime": "[24.3.1]",
+    "UiPath.System.Activities": "[24.3.1]",
     "UiPath.Testing.Activities": "[23.10.1]",
-    "UiPath.UIAutomation.Activities.Runtime": "[23.10.12]",
-    "UiPath.WebAPI.Activities.Runtime": "[1.20.1]"
+    "UiPath.UIAutomation.Activities": "[23.10.12]",
+    "UiPath.WebAPI.Activities": "[1.20.1]"
   },
   "webServices": [],
   "entitiesStores": [
@@ -52,53 +52,58 @@
     "processOptions": {
       "ignoredFiles": []
     },
-    "fileInfoCollection": [],
-    "saveToCloud": false
-  },
-  "arguments": {
-    "input": [
+    "fileInfoCollection": [
       {
-        "name": "in_OrchestratorQueueName",
-        "displayName": "in_OrchestratorQueueName",
-        "tooltip": "Allows the Orchestrator queue name to be passed as an argument, instead of only being defined in the configuration file.",
-        "type": "System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
-        "required": false,
-        "hasDefault": false
+        "editingStatus": "InProgress",
+        "testCaseId": "1f02a4e0-94d9-4597-9769-a948c3e81f15",
+        "testCaseType": "TestCase",
+        "executionTemplateType": "Local",
+        "fileName": "Tests\\GetTransactionDataTestCase.xaml"
       },
       {
-        "name": "in_OrchestratorQueueFolder",
-        "displayName": "in_OrchestratorQueueFolder",
-        "tooltip": "Allows the Orchestrator folder name where the queue is created to be passed as an argument, instead of only being defined in the configuration file.",
-        "type": "System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
-        "required": false,
-        "hasDefault": false
+        "editingStatus": "InProgress",
+        "testCaseId": "83c92d31-ef13-4d77-890a-1296fe58ef5b",
+        "testCaseType": "TestCase",
+        "executionTemplateType": "Local",
+        "fileName": "Tests\\InitAllApplicationsTestCase.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "0840f8b8-38d9-483b-85fb-b2cdd454a262",
+        "testCaseType": "TestCase",
+        "executionTemplateType": "Local",
+        "fileName": "Tests\\InitAllSettingsTestCase.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "9c99f5f8-def8-40e3-a556-52e66afb13e2",
+        "testCaseType": "TestCase",
+        "executionTemplateType": "Local",
+        "fileName": "Tests\\MainTestCase.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "dd00d834-c1ca-43e4-abc3-ca76e5e0a3e0",
+        "testCaseType": "TestCase",
+        "executionTemplateType": "Local",
+        "fileName": "Tests\\ProcessTestCase.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "c9e2bb5a-354d-478d-9e07-7a802de0fed6",
+        "testCaseType": "TestCase",
+        "executionTemplateType": "Local",
+        "fileName": "Tests\\WorkflowTestCaseTemplate.xaml"
       }
     ],
-    "output": []
+    "saveToCloud": false
   },
   "expressionLanguage": "VisualBasic",
   "entryPoints": [
     {
       "filePath": "Main.xaml",
       "uniqueId": "4029a968-0592-47e0-a0f7-4b99c9ac3933",
-      "input": [
-        {
-          "name": "in_OrchestratorQueueName",
-          "displayName": "in_OrchestratorQueueName",
-          "tooltip": "Allows the Orchestrator queue name to be passed as an argument, instead of only being defined in the configuration file.",
-          "type": "System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
-          "required": false,
-          "hasDefault": false
-        },
-        {
-          "name": "in_OrchestratorQueueFolder",
-          "displayName": "in_OrchestratorQueueFolder",
-          "tooltip": "Allows the Orchestrator folder name where the queue is created to be passed as an argument, instead of only being defined in the configuration file.",
-          "type": "System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
-          "required": false,
-          "hasDefault": false
-        }
-      ],
+      "input": [],
       "output": []
     }
   ],

@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    "net8.0-windows7.0": {
+    "net6.0-windows7.0": {
       "AutoMapper/9.0.0": {
         "type": "package",
         "dependencies": {
@@ -256,12 +256,12 @@
           "MimeKit": "4.4.0"
         },
         "compile": {
-          "lib/net8.0/_._": {
+          "lib/net6.0/_._": {
             "related": ".dll.config;.pdb;.xml"
           }
         },
         "runtime": {
-          "lib/net8.0/MailKit.dll": {
+          "lib/net6.0/MailKit.dll": {
             "related": ".dll.config;.pdb;.xml"
           }
         }
@@ -1509,12 +1509,12 @@
           "System.Text.Encoding.CodePages": "8.0.0"
         },
         "compile": {
-          "lib/net8.0/_._": {
+          "lib/net6.0/_._": {
             "related": ".dll.config;.pdb;.xml"
           }
         },
         "runtime": {
-          "lib/net8.0/MimeKit.dll": {
+          "lib/net6.0/MimeKit.dll": {
             "related": ".dll.config;.pdb;.xml"
           }
         }
@@ -2533,12 +2533,12 @@
       "System.Formats.Asn1/8.0.0": {
         "type": "package",
         "compile": {
-          "lib/net8.0/_._": {
+          "lib/net6.0/_._": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net8.0/System.Formats.Asn1.dll": {
+          "lib/net6.0/System.Formats.Asn1.dll": {
             "related": ".xml"
           }
         },
@@ -3659,12 +3659,12 @@
           "System.Formats.Asn1": "8.0.0"
         },
         "compile": {
-          "lib/net8.0/_._": {
+          "lib/net6.0/_._": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net8.0/System.Security.Cryptography.Pkcs.dll": {
+          "lib/net6.0/System.Security.Cryptography.Pkcs.dll": {
             "related": ".xml"
           }
         },
@@ -3672,7 +3672,7 @@
           "buildTransitive/net6.0/_._": {}
         },
         "runtimeTargets": {
-          "runtimes/win/lib/net8.0/System.Security.Cryptography.Pkcs.dll": {
+          "runtimes/win/lib/net6.0/System.Security.Cryptography.Pkcs.dll": {
             "assetType": "runtime",
             "rid": "win"
           }
@@ -3995,13 +3995,16 @@
       },
       "System.Text.Encoding.CodePages/8.0.0": {
         "type": "package",
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
+        },
         "compile": {
-          "lib/net8.0/_._": {
+          "lib/net6.0/_._": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net8.0/System.Text.Encoding.CodePages.dll": {
+          "lib/net6.0/System.Text.Encoding.CodePages.dll": {
             "related": ".xml"
           }
         },
@@ -4009,7 +4012,7 @@
           "buildTransitive/net6.0/_._": {}
         },
         "runtimeTargets": {
-          "runtimes/win/lib/net8.0/System.Text.Encoding.CodePages.dll": {
+          "runtimes/win/lib/net6.0/System.Text.Encoding.CodePages.dll": {
             "assetType": "runtime",
             "rid": "win"
           }
@@ -5825,7 +5828,7 @@
         }
       }
     },
-    "net8.0-windows7.0/win-x64": {
+    "net6.0-windows7.0/win10-x64": {
       "AutoMapper/9.0.0": {
         "type": "package",
         "dependencies": {
@@ -6080,12 +6083,12 @@
           "MimeKit": "4.4.0"
         },
         "compile": {
-          "lib/net8.0/_._": {
+          "lib/net6.0/_._": {
             "related": ".dll.config;.pdb;.xml"
           }
         },
         "runtime": {
-          "lib/net8.0/MailKit.dll": {
+          "lib/net6.0/MailKit.dll": {
             "related": ".dll.config;.pdb;.xml"
           }
         }
@@ -7230,12 +7233,12 @@
           "System.Text.Encoding.CodePages": "8.0.0"
         },
         "compile": {
-          "lib/net8.0/_._": {
+          "lib/net6.0/_._": {
             "related": ".dll.config;.pdb;.xml"
           }
         },
         "runtime": {
-          "lib/net8.0/MimeKit.dll": {
+          "lib/net6.0/MimeKit.dll": {
             "related": ".dll.config;.pdb;.xml"
           }
         }
@@ -7617,7 +7620,8 @@
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.0",
-          "Microsoft.NETCore.Targets": "1.1.0"
+          "Microsoft.NETCore.Targets": "1.1.0",
+          "runtime.win7-x64.runtime.native.System.IO.Compression": "4.3.0"
         },
         "compile": {
           "lib/netstandard1.0/_._": {}
@@ -7852,6 +7856,21 @@
         },
         "runtime": {
           "runtimes/win/lib/netstandard1.5/System.Runtime.Extensions.dll": {}
+        }
+      },
+      "runtime.win7-x64.runtime.native.System.IO.Compression/4.3.0": {
+        "type": "package",
+        "native": {
+          "runtimes/win7-x64/native/_._": {}
+        }
+      },
+      "runtime.win7.System.Private.Uri/4.3.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard/_._": {}
+        },
+        "runtime": {
+          "runtimes/win/lib/netstandard1.0/System.Private.Uri.dll": {}
         }
       },
       "SharpZipLib/1.3.3": {
@@ -8336,12 +8355,12 @@
       "System.Formats.Asn1/8.0.0": {
         "type": "package",
         "compile": {
-          "lib/net8.0/_._": {
+          "lib/net6.0/_._": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net8.0/System.Formats.Asn1.dll": {
+          "lib/net6.0/System.Formats.Asn1.dll": {
             "related": ".xml"
           }
         },
@@ -8946,7 +8965,8 @@
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.0",
-          "Microsoft.NETCore.Targets": "1.1.0"
+          "Microsoft.NETCore.Targets": "1.1.0",
+          "runtime.win7.System.Private.Uri": "4.3.0"
         },
         "compile": {
           "ref/netstandard/_._": {}
@@ -9398,12 +9418,12 @@
           "System.Formats.Asn1": "8.0.0"
         },
         "compile": {
-          "lib/net8.0/_._": {
+          "lib/net6.0/_._": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "runtimes/win/lib/net8.0/System.Security.Cryptography.Pkcs.dll": {
+          "runtimes/win/lib/net6.0/System.Security.Cryptography.Pkcs.dll": {
             "related": ".xml"
           }
         },
@@ -9694,13 +9714,16 @@
       },
       "System.Text.Encoding.CodePages/8.0.0": {
         "type": "package",
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
+        },
         "compile": {
-          "lib/net8.0/_._": {
+          "lib/net6.0/_._": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "runtimes/win/lib/net8.0/System.Text.Encoding.CodePages.dll": {
+          "runtimes/win/lib/net6.0/System.Text.Encoding.CodePages.dll": {
             "related": ".xml"
           }
         },
@@ -15035,6 +15058,37 @@
         "runtimes/win/lib/net/_._",
         "runtimes/win/lib/netcore50/System.Runtime.Extensions.dll",
         "runtimes/win/lib/netstandard1.5/System.Runtime.Extensions.dll"
+      ]
+    },
+    "runtime.win7-x64.runtime.native.System.IO.Compression/4.3.0": {
+      "sha512": "UamDlgSO/nIzc96M+g3wbvAGbAuXjvRYR5Ttm/FVJgt2iva8ouOqSJ0j6eGI7pZDLvD/ZISl9XRZOajE/Xvizg==",
+      "type": "package",
+      "path": "runtime.win7-x64.runtime.native.system.io.compression/4.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "runtime.win7-x64.runtime.native.system.io.compression.4.3.0.nupkg.sha512",
+        "runtime.win7-x64.runtime.native.system.io.compression.nuspec",
+        "runtimes/win7-x64/native/clrcompression.dll"
+      ]
+    },
+    "runtime.win7.System.Private.Uri/4.3.0": {
+      "sha512": "Q+IBgaPYicSQs2tBlmXqbS25c/JLIthWrgrpMwxKSOobW/OqIMVFruUGfuaz4QABVzV8iKdCAbN7APY7Tclbnw==",
+      "type": "package",
+      "path": "runtime.win7.system.private.uri/4.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "ref/netstandard/_._",
+        "runtime.win7.system.private.uri.4.3.0.nupkg.sha512",
+        "runtime.win7.system.private.uri.nuspec",
+        "runtimes/aot/lib/netcore50/System.Private.Uri.dll",
+        "runtimes/win/lib/netcore50/System.Private.Uri.dll",
+        "runtimes/win/lib/netstandard1.0/System.Private.Uri.dll"
       ]
     },
     "SharpZipLib/1.3.3": {
@@ -22284,7 +22338,7 @@
   },
   "projectFileDependencyGroups": {
     "": [],
-    "net8.0-windows7.0": [
+    "net6.0-windows7.0": [
       "UiPath.DataService.Activities >= 23.10.0 <= 23.10.0",
       "UiPath.Excel.Activities >= 2.23.4 <= 2.23.4",
       "UiPath.Mail.Activities >= 1.23.1 <= 1.23.1",
@@ -22306,7 +22360,7 @@
       "outputPath": "C:\\Users\\Admin\\Documents\\GitHub\\PomiaryWody\\Pomiary_Performer\\.local"
     },
     "frameworks": {
-      "net8.0-windows7.0": {
+      "net6.0-windows7.0": {
         "dependencies": {
           "UiPath.DataService.Activities": {
             "include": "Runtime",
@@ -22344,11 +22398,11 @@
             "version": "[1.20.1, 1.20.1]"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\Admin\\AppData\\Local\\Programs\\UiPath\\Studio\\PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\Admin\\AppData\\Local\\Programs\\UiPath\\Studio\\runtime.json"
       }
     },
     "runtimes": {
-      "win-x64": {
+      "win10-x64": {
         "#import": []
       }
     }
